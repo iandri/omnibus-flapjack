@@ -11,7 +11,7 @@ module OmnibusFlapjack
       return @distro if @distro
       if (@package_file && !@package_file.empty?)
         @distro = case
-        when @package_file.match(/wheezy/)
+        when @package_file.match(/wheezy|jessie/)
           'debian'
         when @package_file.match(/(precise|trusty)/)
           'ubuntu'

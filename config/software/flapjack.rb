@@ -24,7 +24,7 @@ etc_path = "#{install_dir}/embedded/etc"
 omnibus_flapjack_path = Dir.pwd
 
 build do
-  command "if [ ! -d flapjack_source ] ; then git clone https://github.com/flapjack/flapjack.git flapjack_source ; fi"
+  command "if [ ! -d flapjack_source ] ; then git clone https://github.com/iandri/flapjack flapjack_source ; fi"
   command "cd flapjack_source && " \
           "git checkout master && " \
           "git pull && " \

@@ -6,8 +6,7 @@ require 'chronic_duration'
 
 module OmnibusFlapjack
   module Helpers
-
-    def self.run_docker (command, opts = {})
+    def self.run_docker(command, opts = {})
       timeout      = opts[:timeout]      || 60 * 60 * 3
       live_stream  = opts[:live_stream]  || $stdout
       max_attempts = opts[:max_attempts] || 10

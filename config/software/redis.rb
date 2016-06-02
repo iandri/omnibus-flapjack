@@ -1,10 +1,10 @@
 require 'erb'
 
 name "redis"
-default_version "2.8.17"
+default_version "3.2.0"
 
 source :url => "http://download.redis.io/releases/redis-#{version}.tar.gz",
-       :md5 => "69023c3005664602268a5e2dbe23425c"
+       :md5 => "9ec99ff912f35946fdb56fe273140483"
 
 relative_path "redis-#{version}"
 
