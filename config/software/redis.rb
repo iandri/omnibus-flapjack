@@ -4,7 +4,7 @@ name "redis"
 default_version "3.2.0"
 
 source :url => "http://download.redis.io/releases/redis-#{version}.tar.gz",
-       :md5 => "9ec99ff912f35946fdb56fe273140483"
+       :md5 => "0c1820931094369c8cc19fc1be62f598bc5961ca"
 
 relative_path "redis-#{version}"
 

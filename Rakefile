@@ -93,7 +93,7 @@ task :build do
     'export LC_ALL=en_US.UTF-8 && ' \
     'export LANGUAGE=en_US:en && ' +
     OmnibusFlapjack::Helpers.build_omnibus_cmd(pkg)
-  elsif 'debian'.eql?(pkg.distro) && 'wheezy'.eql?(pkg.distro_release)
+  elsif 'debian'.eql?(pkg.distro) && 'wheezy'.eql?(pkg.distro_release) || 'jessie'.eql?(pkg.distro_release)
     'echo "en_US.UTF-8 UTF-8" >/etc/locale.gen && ' \
     'apt-get update && ' \
     'apt-get install -y locales && ' \
@@ -120,7 +120,7 @@ task :build do
     '-e', "DISTRO_RELEASE=#{pkg.distro_release}",
     '-e', "OFFICIAL_FLAPJACK_PACKAGE=#{official_pkg}",
     "-v", "#{Dir.home}/.gnupg:/root/.gnupg",
-    "flapjack/omnibus-#{pkg.distro}:#{pkg.distro_release}", 'bash', '-l', '-c',
+    "iandri/omnibus-#{pkg.distro}:#{pkg.distro_release}", 'bash', '-l', '-c',
     "\'#{omnibus_cmd}\'"
   ].join(" ")
   puts "Executing: " + docker_cmd_string
